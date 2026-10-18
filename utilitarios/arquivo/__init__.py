@@ -19,7 +19,7 @@ def criarArquivo(nome):
         print(f'{cor["vermelho"]}Ocorreu um erro ao criar o arquivo. Causa: {erro}{cor["limpa"]}')
 
 
-def lerArquivo(nome):
+def lerArquivo(nome, encoding='utf-8'):
     try:
         with open(nome, 'r') as a:
             lista = a.read()
@@ -31,7 +31,7 @@ def lerArquivo(nome):
         print(f'{cor["vermelho"]}Não foi possível ler o arquivo. Causa: {erro}{cor["limpa"]}')
 
 
-def addTarefa(arq, t):
+def addTarefa(arq, t, encoding='utf-8'):
     try:
         with open(arq,'a') as a:
             a.write(f'{t}\n')

@@ -1,5 +1,6 @@
 from utilitarios.cores import cor
 from utilitarios.interface import titulo, linha
+from time import sleep
 
 
 def arquivoExiste(nome):
@@ -27,15 +28,12 @@ def lerArquivo(nome, encoding='utf-8'):
             if not linhas:
                 print(f'{cor["amarelo"]}A lista de tarefas está vazia.{cor["limpa"]}')
             else:
-                print(f'{cor["amarelo"]}')
                 titulo('LISTA DE TAREFAS')
-                print(f'{cor["limpa"]}')
                 for pos, tarefa in enumerate(linhas, 1):
                     print(f'{cor["amarelo"]}{pos}{cor["limpa"]} - {tarefa.strip()}')
                 
-                print(f'{cor["amarelo"]}')
                 print(linha())
-                print(f'{cor["limpa"]}', end='')
+                sleep(1)
 
     except Exception as erro:
         print(f'{cor["vermelho"]}Não foi possível ler o arquivo. Causa: {erro}{cor["limpa"]}')
@@ -48,4 +46,5 @@ def addTarefa(arq, t, encoding='utf-8'):
     except Exception as erro:
         print(f'{cor["vermelho"]}Não foi possível adicionar a tarefa. Causa: {erro}{cor["limpa"]}')
     else:
-        print(f'{cor["verde"]}A tarefa "{t}" foi adicionada com sucesso.{cor["limpa"]}')
+        print(f'{cor["verde"]}A tarefa "{t}" foi adicionada na lista.{cor["limpa"]}')
+        sleep(1)

@@ -1,4 +1,6 @@
 from utilitarios.cores import cor
+from time import sleep
+
 
 def linha(tam=50):
     return '-' * tam
@@ -8,6 +10,7 @@ def titulo(msg):
     print(linha())
     print(msg.center(50))
     print(linha())
+    sleep(1)
 
 
 def menu(lst):
@@ -19,7 +22,10 @@ def menu(lst):
         else:
             print(f'{cor["amarelo"]}{c} - {cor["limpa"]}{item}')
             c = c + 1
+    sleep(0.5)
+    print(linha())
     opc = leiaInt('Sua opção: ')
+    sleep(0.5)
     return opc
 
 

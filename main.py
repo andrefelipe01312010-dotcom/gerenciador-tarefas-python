@@ -1,7 +1,7 @@
 from utilitarios.interface import *
 from utilitarios.arquivo import *
 from utilitarios.cores import cor
-
+from time import sleep
 
 arq = 'tarefa.txt'
 if not arquivoExiste(arq):
@@ -32,16 +32,16 @@ while True:
                 addTarefa(arq, t) 
                 break 
         
-
     elif resp == 2:
         lerArquivo(arq)
 
     elif resp == 3:
         print(f'{cor["vermelho"]}Finalizando...{cor["limpa"]}')
+        sleep(1)
         break
     else:
         print(f'{cor["vermelho"]}Erro! Digite uma das opções do menu.{cor["limpa"]}')
 
 print(cor["vermelho"])
 titulo('VOLTE SEMPRE!')
-print(cor["limpa"])
+print(cor["limpa"], end='')

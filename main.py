@@ -2,6 +2,7 @@ from utilitarios.interface import *
 from utilitarios.arquivo import *
 from utilitarios.cores import cor
 
+
 arq = 'tarefa.txt'
 if not arquivoExiste(arq):
     criarArquivo(arq)

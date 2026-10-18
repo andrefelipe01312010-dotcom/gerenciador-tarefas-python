@@ -1,4 +1,5 @@
 from utilitarios.cores import cor
+from utilitarios.interface import titulo, linha
 
 
 def arquivoExiste(nome):
@@ -22,11 +23,14 @@ def criarArquivo(nome):
 def lerArquivo(nome, encoding='utf-8'):
     try:
         with open(nome, 'r') as a:
-            lista = a.read()
-            if lista.strip() == '':
+            linhas = a.readlines()
+            if not linhas:
                 print(f'{cor["amarelo"]}A lista de tarefas está vazia.{cor["limpa"]}')
             else:
-                print(lista)
+                titulo('LISTA DE TAREFAS')
+                for pos, tarefa in enumerate(linhas, 1):
+                    print(f'{cor["amarelo"]}{pos}{cor["limpa"]} - {tarefa.strip()}')
+                print(linha())
     except Exception as erro:
         print(f'{cor["vermelho"]}Não foi possível ler o arquivo. Causa: {erro}{cor["limpa"]}')
 

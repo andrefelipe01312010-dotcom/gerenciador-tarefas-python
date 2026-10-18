@@ -7,6 +7,7 @@ if not arquivoExiste(arq):
     criarArquivo(arq)
 
 titulo('GERENCIADOR DE TAREFAS')
+
 while True:
     resp = menu(['Adicionar uma tarefa', 'Listar todas as tarefas', 'Sair do programa'])
     if resp == 1:
@@ -33,10 +34,13 @@ while True:
 
     elif resp == 2:
         lerArquivo(arq)
-        
+
     elif resp == 3:
-        print(f'{cor["amarelo"]}Finalizando...{cor["limpa"]}')
+        print(f'{cor["vermelho"]}Finalizando...{cor["limpa"]}')
         break
     else:
         print(f'{cor["vermelho"]}Erro! Digite uma das opções do menu.{cor["limpa"]}')
-titulo(f'{cor["verde"]}VOLTE SEMPRE{cor["limpa"]}')
+
+print(cor["vermelho"])
+titulo('VOLTE SEMPRE!')
+print(cor["limpa"])
